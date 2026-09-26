@@ -1,0 +1,21 @@
+fuzzy_ratio -> order of sequence matter for comparing
+
+fuzzy_partial_ratio -> Does shorter string matches with portion of longer string
+
+token_sort_ratio -> works on the principle of fuzzy_ratio with a set of process included like tokenize,sort token, join again,calculate normal fuzzy_ratio 
+(under the hood process)
+
+token_set_ratio -> works on unique words shared between the strings
+
+
+                  FUZZY MATCHING
+                        │
+          ┌─────────────┴─────────────┐
+          │                           │
+      Characters                    Words
+          │                           │
+      ratio()                 ┌────────┴────────┐
+                              │                 │
+                         Word order         Word content
+                              │                 │
+                    token_sort_ratio    token_set_ratio
